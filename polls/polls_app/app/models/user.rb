@@ -9,6 +9,9 @@
 #
 
 class User < ApplicationRecord
+
+  validates :user_name, presence: true, uniqueness: true
+
   has_many :polls,
     primary_key: :id,
     foreign_key: :author_id,
